@@ -81,3 +81,21 @@ button:hover{filter:brightness(1.1)}
 
 
 
+#musicBtn{
+ position:fixed;
+ bottom:90px;
+ right:20px;
+ width:45px;
+ height:45px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:50%;
+ background:#020412;
+ border:1px solid #2cff9a;
+ color:#2cff9a;
+ font-size:22px;
+ cursor:pointer;
+ box-shadow:0 0 10px #2cff9a;
+ z-index:9999;
+}
