@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Access</title>
+
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<main class="panel login">
+
+<h1>ACCESS</h1>
+<p class="tag">authorization required</p>
+
+<input id="cid" placeholder="Client ID"/>
+<input id="pass" type="password" placeholder="Password"/>
+
+<button onclick="login()">LOGIN</button>
+
+<div class="terminal" id="msg"></div>
+
+</main>
+
+<audio id="beep">
+<source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=">
+</audio>
+
+<script>
+
+function beep(){
+ const b=document.getElementById("beep");
+ if(b){
+  b.currentTime=0;
+  b.play().catch(()=>{});
+ }
+}
+
+async function login(){
+
+ const id = document.getElementById("cid").value;
+ const passw = document.getElementById("pass").value;
+
+ const r = await fetch(`/api/login?id=${encodeURIComponent(id)}&pass=${encodeURIComponent(passw)}`);
+
+ const d = await r.json();
+
+if(d.ok){
+
+ beep();
+
+ localStorage.setItem("exp", d.expires);
+
+ localStorage.setItem("uid", id);
+
+ setTimeout(()=>{
+  location.href="index.html";
+ },300);
+
+ }else{
+
+  document.getElementById("msg").textContent = d.msg || "Access denied";
+
+ }
+
+}
+
+</script>
+
+
+
+ 
+</body>
+</html>
