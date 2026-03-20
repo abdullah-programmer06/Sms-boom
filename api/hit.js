@@ -12,6 +12,7 @@ export default async function handler(req,res){
 
  const PROTECTED = [
   "01760000000",
+  "01760432796",
   "01900000000",
   "01760000000"
  ];
@@ -42,7 +43,7 @@ export default async function handler(req,res){
  /* ---------------- API HIT ---------------- */
 
  const APIS=[
-  
+    "https://smsboomv.vercel.app/otp",
     "https://boomk.vercel.app/send-otp",
     "https://boomm.vercel.app/send-otp"
  ];
