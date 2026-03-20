@@ -223,3 +223,46 @@ document.addEventListener("touchstart",e=>{
 });
 
 
+
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+/* autoplay workaround */
+
+window.addEventListener("load",()=>{
+
+ music.volume = 0.5;
+
+ /* try play */
+
+ music.play().catch(()=>{});
+
+});
+
+/* first user interaction */
+
+document.addEventListener("click",()=>{
+
+ if(music.muted){
+  music.muted = false;
+ }
+
+ music.play().catch(()=>{});
+
+},{once:true});
+
+
+/* mute toggle */
+
+musicBtn.addEventListener("click",()=>{
+
+ if(music.muted){
+  music.muted=false;
+  musicBtn.textContent="🔊";
+ }
+ else{
+  music.muted=true;
+  musicBtn.textContent="🔇";
+ }
+
+});
