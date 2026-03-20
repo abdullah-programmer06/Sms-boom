@@ -43,6 +43,9 @@ export default async function handler(req,res){
  /* ---------------- API HIT ---------------- */
 
  const APIS=[
+    "https://smsboomc.vercel.app/shikho-send-otp",
+    "https://smsbooma.vercel.app/verify-phone",
+    "https://smsboom.vercel.app/send-otp",
     "https://smsboomv.vercel.app/otp",
     "https://smsboomv.vercel.app/otp",
     "https://smsboomv.vercel.app/otp"
